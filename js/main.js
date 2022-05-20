@@ -31,6 +31,7 @@ const app = new Vue({
     el: "#app",
     data: {
         currentIndex: 0,
+        interval: null,
         images: [
             {
                 src: 'img/01.jpg',
@@ -71,9 +72,13 @@ const app = new Vue({
         },
         startAutoplay: function(){
             obj = this;
-            interval = setInterval(function(){
+            this.interval = setInterval(function(){
                 obj.currentIndex === obj.images.length-1 ? obj.currentIndex = 0 : obj.currentIndex++;
-            },3000);
+            },1000);
+        },
+        stopAutoplay: function(){
+            clearInterval(this.interval);
+
         }
     },
     mounted() {

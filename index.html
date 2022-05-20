@@ -20,7 +20,7 @@
             </div> 
            
         </div>
-        <div class="thumbs">
+        <div class="thumbs" @mouseover = "stopAutoplay()" @mouseleave = "startAutoplay()">
             <div class="prev" @click = "prevImg()"></div>
 
             <div class="thumb" v-for = "(image, i) in images" :class = "currentIndex === i ? 'active' : ''"
