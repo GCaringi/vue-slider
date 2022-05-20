@@ -66,5 +66,8 @@ const app = new Vue({
         prevImg(){
             this.currentIndex === 0 ? this.currentIndex = this.images.length-1 : this.currentIndex--;
         },
+        choseImg(index){
+            this.currentIndex = index;
+        }
     }
 })

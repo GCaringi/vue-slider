@@ -23,7 +23,8 @@
         <div class="thumbs">
             <div class="prev" @click = "prevImg()"></div>
 
-            <div class="thumb" v-for = "image in images">
+            <div class="thumb" v-for = "(image, i) in images" :class = "currentIndex === i ? 'active' : ''"
+                    @click = choseImg(i)>
                 <img :src= "image.src" :alt="image.title">
             </div> 
 
