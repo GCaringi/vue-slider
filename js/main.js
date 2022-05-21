@@ -32,6 +32,7 @@ const app = new Vue({
     data: {
         currentIndex: 0,
         interval: null,
+        view: "bg-light",
         images: [
             {
                 src: 'img/01.jpg',
@@ -78,7 +79,13 @@ const app = new Vue({
         },
         stopAutoplay: function(){
             clearInterval(this.interval);
-
+        },
+        changeView(){
+            if (this.view === "bg-light"){
+                this.view = "bg-dark";
+            }else{
+                this.view = "bg-light";
+            }
         }
     },
     mounted() {

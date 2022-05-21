@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+.screen{
+    position: relative;
+    transition: background-color 2s;
+}
+
+.bg-light{
+    background-color: lightgray;
+}
+
+.bg-dark{
+    background-color: #000;
+}
+
 .container {
     width: 900px;
     height: 100vh;
@@ -106,4 +119,59 @@
     bottom: 35%;
     left: 50%;
     transform: translate(-50%) rotate(135deg);
+}
+
+
+/*-----------
+     TOGGLE
+-------------*/
+.style-bw{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
+#toggle{
+    display: none;
+}
+
+.button{
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.button::after{
+    content: "\f185";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    background-color: #e03c3c;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: grid;
+    place-content: center;
+    line-height: 0;
+    transition: background-color 1s,
+    transform 1s ease-in;
+}
+
+#toggle:checked + .button::after{
+    content: "\f186";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: lightgray;
+    background-color: #1f257f;
+    transform: translateX(20px) rotate(360deg);
 }
